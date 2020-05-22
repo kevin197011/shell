@@ -21,7 +21,7 @@ source ${BASE_DIR}/mac/base
 source ${BASE_DIR}/linux/base
 
 # Usage
-if [[ $# -eq 0 ]]; then
+if [[ $# -eq 0 ]] || [[ $1 == '-h' ]]; then
     shell::utils::usage
     exit 1
 fi
