@@ -1,0 +1,3 @@
+shell::utils::usage() {
+    printf "Usage:\n    $(basename $0)    mac|linux"
+}

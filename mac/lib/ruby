@@ -1,0 +1,4 @@
+brew install rbenv
+rbenv init
+rbenv install 2.6.5
+rbenv global 2.6.5

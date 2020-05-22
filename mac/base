@@ -1,0 +1,8 @@
+shell::utils::mac() {
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+    for file in ${BASE_DIR}/mac/lib/*; do
+        ${DEBUG} && echo "import $(basename ${file})"
+        source ${file}
+    done
+}
