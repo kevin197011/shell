@@ -1,6 +1,3 @@
 shell::linux::base() {
-    for file in ${BASE_DIR}/linux/lib/*; do
-        ${DEBUG} && echo "import $(basename ${file})"
-        source ${file}
-    done
+    shell::utils::import ${BASE_DIR}/linux/lib
 }
