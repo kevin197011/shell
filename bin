@@ -10,6 +10,9 @@ DEBUG=false
 # Globel base dir
 BASE_DIR=$(dirname "$0")
 
+# Import shell::utils::import
+source ${BASE_DIR}/utils/import
+
 # Import utils
 shell::utils::import ${BASE_DIR}/utils
 
