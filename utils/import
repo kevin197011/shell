@@ -6,6 +6,7 @@ shell::utils::import() {
             source ${file}
         done
     else
+        ${DEBUG} && echo "import $(basename ${file})"
         source $1
     fi
 }
