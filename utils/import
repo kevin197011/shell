@@ -1,12 +1,12 @@
 shell::utils::import() {
     module=$1
-    if [[ -d $1 ]]; then
-        for file in $1/*; do
+    if [[ -d ${module} ]]; then
+        for file in ${module}/*; do
             ${DEBUG} && echo "import $(basename ${file})"
             source ${file}
         done
     else
-        ${DEBUG} && echo "import $(basename ${file})"
-        source $1
+        ${DEBUG} && echo "import $(basename ${module})"
+        source ${module}
     fi
 }
