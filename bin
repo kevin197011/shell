@@ -30,11 +30,11 @@ fi
 case "$1" in
 mac)
     ${DEBUG} && echo "mac script"
-    shell::utils::mac
+    shell::mac::base
     ;;
 linux)
     ${DEBUG} && echo "linux script"
-    shell::utils::linux
+    shell::linux::base
     ;;
 *)
     echo "other"
