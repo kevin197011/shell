@@ -11,14 +11,11 @@ DEBUG=false
 BASE_DIR=$(dirname "$0")
 
 # Import utils
-for file in ${BASE_DIR}/utils/*; do
-    ${DEBUG} && echo "import $(basename ${file})"
-    source ${file}
-done
+shell::utils::import ${BASE_DIR}/utils
 
 # Import mac and linux
-source ${BASE_DIR}/mac/base
-source ${BASE_DIR}/linux/base
+shell::utils::import ${BASE_DIR}/mac/base
+shell::utils::import ${BASE_DIR}/linux/base
 
 # Usage
 if [[ $# -eq 0 ]] || [[ $1 == '-h' ]]; then
@@ -37,6 +34,7 @@ linux)
     shell::linux::base
     ;;
 *)
-    echo "other"
+    echo "other params!"
+    shell::utils::usage
     ;;
 esac

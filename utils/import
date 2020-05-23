@@ -1,0 +1,11 @@
+shell::utils::import() {
+    module=$1
+    if [[ -d $1 ]]; then
+        for file in $1/*; do
+            ${DEBUG} && echo "import $(basename ${file})"
+            source ${file}
+        done
+    else
+        source $1
+    fi
+}
