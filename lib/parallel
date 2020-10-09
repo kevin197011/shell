@@ -1,0 +1,40 @@
+shell::lib::parallel::demo() {
+    shell::utils::logger::info "$1 start..."
+    sleep 5
+    shell::utils::logger::info "$1 finished!"
+}
+
+shell::lib::parallel::queue() {
+    # Set max process
+    local num=$1
+    shell::utils::logger::info "max process: [${num}]"
+    # Create pipeline file
+    [[ -e /tmp/fd8 ]] || mkfifo /tmp/fd8
+    # Relation
+    exec 8<>/tmp/fd8
+    # Delete pipeline file
+    rm -rf /tmp/fd8
+
+    for ((i = 1; i <= ${num}; i++)); do
+        echo >&8
+    done
+}
+
+# shell concurrent exec
+shell::lib::parallel::run() {
+    shell::lib::parallel::queue 10
+    for item in {1..100}; do
+        read -u8
+        {
+            shell::lib::parallel::demo ${item}
+            echo >&8
+        } &
+    done
+    wait
+    exec 8<&-
+    exec 8>&-
+    shell::utils::logger::info "all ok!"
+}
+
+
+

@@ -1,12 +1,12 @@
 shell::utils::import() {
-    module=$1
+    local module=$1
     if [[ -d ${module} ]]; then
         for file in ${module}/*; do
-            ${DEBUG} && echo "import $(basename ${file})"
+            shell::utils::logger::debug "import $(basename ${file})"
             source ${file}
         done
     else
-        ${DEBUG} && echo "import $(basename ${module})"
+        shell::utils::logger::debug "import $(basename ${module})"
         source ${module}
     fi
 }

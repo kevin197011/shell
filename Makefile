@@ -3,9 +3,13 @@
 all: push
 
 pull:
-	git pull
+		git pull
 
 push:
-	git add .
-	git commit -m "Update."
-	git push origin master
+		@git add .
+		@git commit -m "Update."
+		@git push origin master
+
+fmt:
+		@GO111MODULE=on go get mvdan.cc/sh/v3/cmd/shfmt
+		shfmt

@@ -4,24 +4,30 @@
 #
 # set -euxo pipefail
 
-# Debug log set Debug=true
-DEBUG=false
+
+# global LOG_LEVEL {debug:0; info:1; warn:2; error:3}
+LOG_LEVEL=1
 
 # Globel base dir
 BASE_DIR=$(dirname "$0")
 
-# Import shell::utils::import
-source ${BASE_DIR}/utils/import
-
 # Import utils
-shell::utils::import ${BASE_DIR}/utils
+source ${BASE_DIR}/utils/base
+
 
 # Import mac and linux
 shell::utils::import ${BASE_DIR}/mac/base
 shell::utils::import ${BASE_DIR}/linux/base
+shell::utils::import ${BASE_DIR}/lib/
+
+
+
+# # Test Parallel
+# shell::lib::parallel::run
 
 # Usage
 if [[ $# -eq 0 ]] || [[ $1 == '-h' ]]; then
+    shell::utils::logger::info "help!"
     shell::utils::usage
     exit 1
 fi
@@ -29,15 +35,15 @@ fi
 # main
 case "$1" in
 mac)
-    ${DEBUG} && echo "mac script"
+    shell::utils::logger::info "mac scripts!"
     shell::mac::base
     ;;
 linux)
-    ${DEBUG} && echo "linux script"
+    shell::utils::logger::info "linux scripts!"
     shell::linux::base
     ;;
 *)
-    echo "other params!"
+    shell::utils::logger::debug "other params!"
     shell::utils::usage
     ;;
 esac

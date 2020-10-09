@@ -1,0 +1,44 @@
+# logger
+shell::utils::logger() {
+    local type=$1
+    local msg=$2
+    local time=$(date +'%F %T')
+
+    local format="level: [${type}]\ttime: ${time}\tmessage: ${msg}"
+
+    case ${type} in
+    debug)
+        [[ ${LOG_LEVEL} -le 0 ]] && echo -e "\033[46;37m${format}\033[0m"
+        ;;
+    info)
+        [[ ${LOG_LEVEL} -le 1 ]] && echo -e "\033[32m${format}\033[0m"
+        ;;
+    warn)
+        [[ ${LOG_LEVEL} -le 2 ]] && echo -e "\033[33m${format}\033[0m"
+        ;;
+    error)
+        [[ ${LOG_LEVEL} -le 3 ]] && echo -e "\033[31m${format}\033[0m"
+        ;;
+    esac
+}
+
+# logger level
+shell::utils::logger::debug() {
+    local msg=$1
+    shell::utils::logger debug "${msg}"
+}
+
+shell::utils::logger::info() {
+    local msg=$1
+    shell::utils::logger info "${msg}"
+}
+
+shell::utils::logger::warn() {
+    local msg=$1
+    shell::utils::logger warn "${msg}"
+}
+
+shell::utils::logger::error() {
+    local msg=$1
+    shell::utils::logger error "${msg}"
+}
