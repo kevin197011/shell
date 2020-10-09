@@ -3,9 +3,7 @@ shell::utils::logger() {
     local type=$1
     local msg=$2
     local time=$(date +'%F %T')
-
     local format="level: [${type}]\ttime: ${time}\tmessage: ${msg}"
-
     case ${type} in
     debug)
         [[ ${LOG_LEVEL} -le 0 ]] && echo -e "\033[46;37m${format}\033[0m"
