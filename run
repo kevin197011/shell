@@ -11,12 +11,12 @@ LOG_LEVEL=1
 BASE_DIR=$(dirname "$0")
 
 # Import utils
-source ${BASE_DIR}/utils/base
+source ${BASE_DIR}/lib/base
 
 # Import mac and linux
 shell::utils::import ${BASE_DIR}/mac/base
 shell::utils::import ${BASE_DIR}/linux/base
-shell::utils::import ${BASE_DIR}/lib/
+shell::utils::import ${BASE_DIR}/app/
 
 # # Test Parallel
 # shell::lib::parallel::run

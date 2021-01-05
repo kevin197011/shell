@@ -1,0 +1,5 @@
+# Import dependence modules
+source ${BASE_DIR}/lib/logger
+source ${BASE_DIR}/lib/import
+source ${BASE_DIR}/lib/usage
+source ${BASE_DIR}/lib/package
