@@ -5,7 +5,8 @@ all: p
 pull:
 		git pull
 
-p: fmt
+# p: fmt
+p:
 		@git add .
 		@git commit -m "Update."
 		@git push origin master

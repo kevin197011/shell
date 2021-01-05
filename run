@@ -23,23 +23,23 @@ shell::utils::import ${BASE_DIR}/apps/linux/base
 
 # Usage
 if [[ $# -eq 0 ]] || [[ $1 == '-h' ]]; then
-	shell::utils::logger::info "help!"
-	shell::utils::usage
-	exit 1
+    shell::utils::logger::info "help!"
+    shell::utils::usage
+    exit 1
 fi
 
 # main
 case "$1" in
 mac)
-	shell::utils::logger::info "mac scripts!"
-	shell::mac::base
-	;;
+    shell::utils::logger::info "mac scripts!"
+    shell::mac::base
+    ;;
 linux)
-	shell::utils::logger::info "linux scripts!"
-	shell::linux::base
-	;;
+    shell::utils::logger::info "linux scripts!"
+    shell::linux::base
+    ;;
 *)
-	shell::utils::logger::debug "other params!"
-	shell::utils::usage
-	;;
+    shell::utils::logger::debug "other params!"
+    shell::utils::usage
+    ;;
 esac
