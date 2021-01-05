@@ -12,4 +12,4 @@ p: fmt
 
 fmt:
 		@GO111MODULE=on go get mvdan.cc/sh/v3/cmd/shfmt
-		shfmt -w -l ./
+		shfmt -w -l ./run
