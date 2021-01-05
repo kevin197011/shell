@@ -1,15 +1,15 @@
-.PHONY: pull push
+.PHONY: pull p
 
-all: push
+all: p
 
 pull:
 		git pull
 
-push:
+p: fmt
 		@git add .
 		@git commit -m "Update."
 		@git push origin master
 
 fmt:
 		@GO111MODULE=on go get mvdan.cc/sh/v3/cmd/shfmt
-		shfmt
+		shfmt -w -l ./
