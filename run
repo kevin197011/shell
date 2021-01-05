@@ -14,9 +14,9 @@ BASE_DIR=$(dirname "$0")
 source ${BASE_DIR}/lib/base
 
 # Import mac and linux
-shell::utils::import ${BASE_DIR}/mac/base
-shell::utils::import ${BASE_DIR}/linux/base
-shell::utils::import ${BASE_DIR}/app/
+shell::utils::import ${BASE_DIR}/apps/mac/base
+shell::utils::import ${BASE_DIR}/apps/linux/base
+# shell::utils::import ${BASE_DIR}/apps/
 
 # # Test Parallel
 # shell::lib::parallel::run

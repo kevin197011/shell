@@ -1,0 +1,3 @@
+shell::linux::base() {
+    shell::utils::import ${BASE_DIR}/apps/linux/lib
+}
