@@ -1,1 +1,1 @@
-yum install -y ansible
+shell::utils::package ansible

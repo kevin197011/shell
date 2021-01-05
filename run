@@ -4,7 +4,6 @@
 #
 # set -euxo pipefail
 
-
 # global LOG_LEVEL {debug:0; info:1; warn:2; error:3}
 LOG_LEVEL=1
 
@@ -14,36 +13,33 @@ BASE_DIR=$(dirname "$0")
 # Import utils
 source ${BASE_DIR}/utils/base
 
-
 # Import mac and linux
 shell::utils::import ${BASE_DIR}/mac/base
 shell::utils::import ${BASE_DIR}/linux/base
 shell::utils::import ${BASE_DIR}/lib/
-
-
 
 # # Test Parallel
 # shell::lib::parallel::run
 
 # Usage
 if [[ $# -eq 0 ]] || [[ $1 == '-h' ]]; then
-    shell::utils::logger::info "help!"
-    shell::utils::usage
-    exit 1
+	shell::utils::logger::info "help!"
+	shell::utils::usage
+	exit 1
 fi
 
 # main
 case "$1" in
 mac)
-    shell::utils::logger::info "mac scripts!"
-    shell::mac::base
-    ;;
+	shell::utils::logger::info "mac scripts!"
+	shell::mac::base
+	;;
 linux)
-    shell::utils::logger::info "linux scripts!"
-    shell::linux::base
-    ;;
+	shell::utils::logger::info "linux scripts!"
+	shell::linux::base
+	;;
 *)
-    shell::utils::logger::debug "other params!"
-    shell::utils::usage
-    ;;
+	shell::utils::logger::debug "other params!"
+	shell::utils::usage
+	;;
 esac

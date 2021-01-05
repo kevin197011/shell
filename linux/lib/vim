@@ -1,1 +1,1 @@
-yum install -y vim
+shell::utils::package vim
