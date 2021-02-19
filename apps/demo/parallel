@@ -21,10 +21,14 @@ shell::lib::parallel::queue() {
 
 # shell concurrent exec
 shell::lib::parallel::run() {
+    # local run_func=$1
+    # local queue_nums=$2
+
     shell::lib::parallel::queue 10
     for item in {1..100}; do
         read -u8
         {
+            # eval "shell::lib::parallel::demo ${item}"
             shell::lib::parallel::demo ${item}
             echo >&8
         } &
