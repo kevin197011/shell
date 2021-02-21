@@ -11,7 +11,7 @@ shell::lib::parallel::queue() {
     # Create pipeline file
     [[ -e /tmp/fd8 ]] || mkfifo /tmp/fd8
     # Relation
-    exec 8<>/tmp/fd8
+    exec 8<> /tmp/fd8
     # Delete pipeline file
     rm -rf /tmp/fd8
     for ((i = 1; i <= ${num}; i++)); do

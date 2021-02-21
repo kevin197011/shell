@@ -32,11 +32,11 @@ fi
 case "$1" in
 mac)
     shell::utils::logger::info "mac scripts!"
-    shell::mac::base
+    shell::apps::mac::base
     ;;
 linux)
     shell::utils::logger::info "linux scripts!"
-    shell::linux::base
+    shell::apps::linux::base
     ;;
 *)
     shell::utils::logger::debug "other params!"

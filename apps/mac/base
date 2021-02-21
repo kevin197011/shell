@@ -1,4 +1,4 @@
-shell::mac::base() {
+shell::apps::mac::base() {
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" </dev/null
 
     shell::utils::import ${BASE_DIR}/apps/mac/lib
