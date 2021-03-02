@@ -12,10 +12,10 @@ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 source ~/.bash_profile
 
 # install latest ruby
-rbenv install -v 2.6.3
+rbenv install -v 2.7.2
 
 # sets the default ruby version that the shell will use
-rbenv global 2.6.3
+rbenv global 2.7.2
 
 # to disable generating of documents as that would take so much time
 echo "gem: --no-document" > ~/.gemrc
