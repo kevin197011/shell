@@ -25,3 +25,5 @@ gem install bundler
 
 # must be executed everytime a gem has been installed in order for the ruby executable to run
 rbenv rehash
+
+cd -
