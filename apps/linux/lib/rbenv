@@ -18,7 +18,7 @@
 shell::utils::package epel-release
 shell::utils::package centos-release-scl
 shell::utils::package centos-release-scl-rh
-yum --enablerepo=centos-sclo-rh -y install rh-ruby26
+yum --enablerepo=centos-sclo-rh -y install rh-ruby26 rh-ruby26-ruby-devel
 scl enable rh-ruby26 bash
 ruby -v
 
