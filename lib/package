@@ -2,6 +2,6 @@ shell::utils::package() {
     local app=$1
 
     shell::utils::logger::debug "install ${app}..."
-    test -f /usr/bin/apt && apt install -y ${app}
-    test -f /usr/bin/yum && yum install -y ${app}
+    [[ -e /usr/bin/apt ]] && apt install -y ${app}
+    [[ -e /usr/bin/yum ]] && yum install -y ${app}
 }
