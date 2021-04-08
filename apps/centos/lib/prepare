@@ -31,7 +31,7 @@ eval '$(rbenv init -)"
 export PATH="/opt/.rbenv/plugins/ruby-build/bin:$PATH
 EOF
 
-sed  -i "s/'$/\"$/" /etc/profile.d/rbenv.sh
+sed  -i "s/\'\$/\"\$/" /etc/profile.d/rbenv.sh
 
 source /etc/profile
 
