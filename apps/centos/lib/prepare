@@ -27,7 +27,7 @@ git clone git://github.com/sstephenson/ruby-build.git /opt/.rbenv/plugins/ruby-b
 
 cat > /etc/profile.d/rbenv.sh <<EOF
 export PATH="/opt/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
+eval \"$(rbenv init -)\"
 export PATH="/opt/.rbenv/plugins/ruby-build/bin:$PATH
 EOF
 
@@ -38,6 +38,5 @@ rbenv rehash
 rbenv global 2.7.2
 
 gem install bundler
-
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
