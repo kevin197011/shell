@@ -27,11 +27,11 @@ git clone git://github.com/sstephenson/ruby-build.git /opt/.rbenv/plugins/ruby-b
 
 cat > /etc/profile.d/rbenv.sh <<EOF
 export PATH="/opt/.rbenv/bin:$PATH
-eval '$(rbenv init -)"
+eval '$(rbenv init -)'
 export PATH="/opt/.rbenv/plugins/ruby-build/bin:$PATH
 EOF
 
-sed  -i "s/\'\$/\"\$/" /etc/profile.d/rbenv.sh
+sed -i "s/\'/\"/g" /etc/profile.d/rbenv.sh
 
 source /etc/profile
 
