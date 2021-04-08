@@ -38,6 +38,10 @@ linux)
     shell::utils::logger::info "linux scripts!"
     shell::apps::linux::base
     ;;
+centos)
+    shell::utils::logger::info "centos scripts!"
+    shell::apps::centos::base
+    ;;
 *)
     shell::utils::logger::debug "other params!"
     shell::utils::usage

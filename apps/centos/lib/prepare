@@ -1,0 +1,43 @@
+yum update -y
+shell::utils::package vim
+shell::utils::package git
+git config --global user.name "Oprator"
+git config --global user.email "Oprator@devops.local"
+shell::utils::package git-core
+shell::utils::package zlib
+shell::utils::package zlib-devel
+shell::utils::package gcc-c++
+shell::utils::package patch
+shell::utils::package readline
+shell::utils::package readline-devel
+shell::utils::package libyaml-devel
+shell::utils::package libffi-devel
+shell::utils::package openssl-devel
+shell::utils::package make
+shell::utils::package bzip2
+shell::utils::package autoconf
+shell::utils::package automake
+shell::utils::package libtool
+shell::utils::package bison
+shell::utils::package curl
+shell::utils::package sqlite-devel
+
+git clone git://github.com/sstephenson/rbenv.git /opt/.rbenv
+git clone git://github.com/sstephenson/ruby-build.git /opt/.rbenv/plugins/ruby-build
+
+cat > /etc/profile.d/rbenv.sh <<EOF
+export PATH="/opt/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
+export PATH="/opt/.rbenv/plugins/ruby-build/bin:$PATH
+EOF
+
+source /etc/profile
+
+rbenv install -v 2.7.2
+rbenv rehash
+rbenv global 2.7.2
+
+gem install bundler
+
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

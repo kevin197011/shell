@@ -1,0 +1,3 @@
+shell::apps::centos::base() {
+    shell::utils::import ${BASE_DIR}/apps/centos/lib
+}
