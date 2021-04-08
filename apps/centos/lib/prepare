@@ -25,13 +25,7 @@ shell::utils::package sqlite-devel
 git clone git://github.com/sstephenson/rbenv.git /opt/.rbenv
 git clone git://github.com/sstephenson/ruby-build.git /opt/.rbenv/plugins/ruby-build
 
-cat > /etc/profile.d/rbenv.sh <<EOF
-export PATH="/opt/.rbenv/bin:$PATH"
-eval '$(rbenv init -)'
-export PATH="/opt/.rbenv/plugins/ruby-build/bin:$PATH"
-EOF
-
-sed -i "s/\'/\"/g" /etc/profile.d/rbenv.sh
+python ${BASE_DIR}/python/rbenv-env.py
 
 source /etc/profile
 
